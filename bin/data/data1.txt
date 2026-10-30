@@ -13,7 +13,7 @@ num,name,kor,eng,mat
 
 
 // 2번 ========================================
-/* csv format- commprivate String seperator variable
+/* csv format- comma seperator variable
 1,P01,10,1250.0
 2,P02,15,2000.0
 3,P03,30,1500.0
