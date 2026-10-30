@@ -126,17 +126,36 @@ class Product implements Ipo{
 	public void process() {
 		// 제품명
 		// P01:새우깡, P02:빅파이, P03:짱구, P04:초코파이, P05:수박맛초코파이
-		String pname = "새우깡";
-		p.setPname(pname);
+		String pname = "";
+		if(p.getPcode().equals("P01"))
+			p.setPname("새우깡");
+		else
+			if (p.getPcode().equals("P02"))
+				p.setPname("빅파이");
+			else
+				if (p.getPcode().equals("P03"))
+					p.setPname("짱구");
+				else
+					if (p.getPcode().equals("P04"))
+						p.setPname("초코파이");
+					else
+						if (p.getPcode().equals("P05"))
+							p.setPname("수박맛초코파이");
+		
 		// 금액
 		// 금액(수량*단가)
-		double kum = 10000.0;
+		double kum = p.getAmount() * p.getPrice();
 		p.setKum(kum);
 	}
 
 	@Override
 	public void output() {
-		System.out.println(p);
+		// System.out.println(p);   //p.toString()
+		System.out.println("번호    제품명    수량    단가    금액");
+		String fmt = "%05d   %s    %d      %.3f  %.3f";
+		String msg = String.format(fmt, 
+				p.getNum(), p.getPname(), p.getAmount(), p.getPrice(), p.getKum());
+		System.out.println(msg);
 
 	}
 
